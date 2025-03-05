@@ -1,14 +1,12 @@
-yaml
-
-name: hello-world
+name: CI Workflow
 on: push
 
 jobs:
-  hello-world-job:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Print message
+        run: echo "Hello, GitHub Actions!"
 
-    runs-on : ubuntu-latest
-
-  Steps:
-    - name: Check out repository code
-      user: actions/checkout@v3
-    -run: echo "$(cat hello_world.txt)"
